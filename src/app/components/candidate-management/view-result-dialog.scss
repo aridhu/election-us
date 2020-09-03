@@ -1,0 +1,43 @@
+table {
+    width: 90%;
+    padding: 2%;
+    margin: 2%;
+    background-color: #065fa0;
+    color: #BBBBBB;
+    border-collapse: collapse;
+  }
+  th {
+	font-size: 100%;
+	font-weight: 100;
+  margin: 5% 0;
+	letter-spacing: 1px;
+	line-height: 1;
+    color: yellow;
+    border-bottom: 2px solid #ffa600;
+}
+.title {
+  font-size: 100%;
+	font-weight: 100;
+	margin: 2% 0;
+	letter-spacing: 1px;
+	line-height: 1;
+  color: #BBBBBB;
+}
+.subtitle {
+  font-size: 40%;
+	font-weight: 100;
+	margin: 2% 0;
+	letter-spacing: 1px;
+	line-height: 1;
+  color: #BBBBBB;
+}
+  td.mat-cell {
+    /* row padding */
+    padding: 2% 0;
+    border: none;
+  }
+  
+  tr.mat-row {
+    /* row border */
+    border: 1px solid #ffa600;
+  }

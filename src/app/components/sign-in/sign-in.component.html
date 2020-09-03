@@ -1,0 +1,35 @@
+<mat-grid-list cols="2" rowHeight="3:1">
+  <mat-grid-tile colspan="2" rowspan="1">
+    <mat-list>
+      <mat-list-item>
+        <h1>election - united states of america&nbsp;&nbsp;</h1>
+          <button mat-raised-button color="white" (click)="authService.GoogleAuth()">
+            <img src="../../../assets/btn_google_signin_dark_normal_web.png" />
+          </button>  
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button color="primary" (click)="authService.GoogleAuth()">
+        <h2>authority | candidates | voters | results</h2>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" rowspan="1" >
+    <button mat-raised-button color="white" (click)="authService.GoogleAuth()">
+      <img src="../../../assets/voting.jpg" />
+      </button>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" rowspan="1" >
+    <mat-list>
+      <mat-list-item>
+        <h1>explore the election process</h1>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-raised-button color="accent" (click)="authService.GoogleAuth()">
+        <h3>setup mock poll; announce results</h3>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  
+</mat-grid-list>

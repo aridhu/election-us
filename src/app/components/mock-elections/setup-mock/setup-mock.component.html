@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>A mock election is setup by {{author}}</mat-card-title>
+    </mat-card-header>
+    
+        <mat-card-content>
+            <span class="error">{{errorMessage}}</span>
+            <div class="example-container" [formGroup]="mockelectionForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter title</mat-label>
+                    <input matInput width=25% required formControlName="title" placeholder="mock election">
+                  </mat-form-field>
+                  
+                    <button mat-raised-button color="warn" (click)="setupMock()">Setup</button>
+                  
+             </div>
+        </mat-card-content>
+        <mat-card-actions>
+        <!-- put buttons here -->
+        </mat-card-actions>
+    </mat-card>

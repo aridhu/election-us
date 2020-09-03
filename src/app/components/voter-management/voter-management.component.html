@@ -1,0 +1,62 @@
+<div class="mat-elevation-z8" *ngIf="dataSource;else emptylist">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="createddate">
+      <th mat-header-cell *matHeaderCellDef> Created Date </th>
+      <td mat-cell *matCellDef="let element">
+        <div><span class=subtitle>{{element.createddate.seconds*1000 | date: 'yyyy-MMM-dd'}}</span></div>  </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> 
+          <div><span class=title>{{element.title}}</span></div>
+        </td>
+      </ng-container>
+    
+    
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef> Author </th>
+        <td mat-cell *matCellDef="let element">
+          <div><span class=subtitle>{{element.author}}</span></div>  </td>
+      </ng-container>
+
+
+    <ng-container matColumnDef="candidates">
+      <th mat-header-cell *matHeaderCellDef> Candidates </th>
+      <td mat-cell *matCellDef="let element">
+        <div  *ngIf="element.candidates else emptylist">
+          <button mat-raised-button color="warn" (click)="candidateDialog(element)">view candidates</button>
+        </div>
+        <ng-template #emptylist>
+          <div><span class=subtitle>zero contestants</span></div>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="myvote">
+      <th mat-header-cell *matHeaderCellDef> My Vote </th>
+      <td mat-cell *matCellDef="let element">
+        <div  *ngIf="element.candidates else emptylist">
+          <button mat-raised-button color="warn" (click)="myVote(element)">cast my vote</button>
+        </div>
+        <ng-template #emptylist>
+          <div><span class=subtitle>no election</span></div>
+        </ng-template>
+      </td>
+    </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    
+  
+    <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+    </div>
+
+    <ng-template #emptylist>
+      <mat-card>
+        At present, there are no open polls.
+      </mat-card>
+    </ng-template>

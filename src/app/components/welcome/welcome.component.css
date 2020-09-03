@@ -1,0 +1,32 @@
+.example-card {
+    max-width: 25%;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  mat-grid-tile {
+    background: #065fa9;
+    padding: 1%;
+}
+mat-grid-list {
+  padding: 1%;
+  margin-top: 1%;
+  max-width: 90%;
+}
+
+mat-card {
+    margin: 1%;
+    padding: 1%
+}
+
+.welcome-image {
+    max-width: 20%;
+    max-height: 20%;
+    margin: 0 auto 2% !important;
+    display: block;
+    padding: 1%;
+    float: left;
+  }

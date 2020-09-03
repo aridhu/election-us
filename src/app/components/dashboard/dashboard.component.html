@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  
+  <mat-toolbar-row>
+    <a [routerLink]="['/dashboard/manage-elections']">
+    <img class="logo" src="../../../assets/vote_small2.jpg" /></a>
+    <mat-list>
+      <mat-list-item>
+        <h3>explore the election process with&nbsp;&nbsp;</h3>
+        <a [routerLink]="['/dashboard/welcome']">
+        <button mat-raised-button color=warn>Mock Election</button></a>
+      </mat-list-item>
+    </mat-list>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <div style="height: 80%;">
+      <mat-card class="profile">
+        <span class="menu-spacer"></span>
+        <div *ngIf="authService.userData as user">
+          <span style="font-size: small; color:burlywood; padding: 1%;" >{{(user.displayName) ? user.displayName : 'User'}} </span>  
+          <!--span style="font-size: small; color:burlywood; padding: 10px;" >{{user.uid}}</span-->
+          <span style="font-size: small; color:burlywood; padding: 1%;" >{{user.email}}</span> 
+          <a class="nav-link" (click)="authService.SignOut()">
+            <button mat-raised-button color=warn><mat-icon aria-hidden="false" aria-label="Sign out">exit_to_app</mat-icon>
+              Sign out</button></a>
+        </div>    
+      </mat-card>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
